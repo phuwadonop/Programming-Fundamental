@@ -16,7 +16,32 @@ int main ()
     int i=0,j=0;
 
     while(A[i]!='\0'||B[j]!='\0') {
-
+        if(A[i]=='\0'&&A[i-1]==B[j]){
+            while(B[j]!='\0'){
+                if(B[j]!=A[i-1]){
+                    cout << Astr << " and " << Bstr << ": Not Uniq" << endl ;
+                    return 0;
+                }
+                j++;
+            }
+            if(A[i-1]==B[j-1]){
+                    cout << Astr << " and " << Bstr << ": Uniq" << endl ;
+                    return 0;
+                }
+        }
+        if(B[j]=='\0'&&B[j-1]==A[i]){
+            while(A[i]!='\0'){
+                if(A[i]!=B[j-1]){
+                    cout << Astr << " and " << Bstr << ": Not Uniq" << endl ;
+                    return 0;
+                }
+                i++;
+            }
+            if(B[j-1]==A[i-1]){
+                cout << Astr << " and " << Bstr << ": Uniq" << endl ;
+                return 0;
+            }
+        }
         if(A[0]!=B[0]){
             cout << Astr << " and " << Bstr << ": Not Uniq" << endl ;
             return 0;
@@ -50,7 +75,7 @@ int main ()
                         break;
                     j++;
                 }
-                if(B[j]!='\0' && B[j-1] != A[j-1]){
+                if(B[j]!='\0' && B[j-1] != A[i-1]){
                     cout << Astr << " and " << Bstr << ": Not Uniq" << endl ;
                     return 0;
                 }
