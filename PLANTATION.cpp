@@ -26,11 +26,11 @@ int main ()
 char checkqc () 
 {   
     int N,R,D;
-    scanf("%d %d %d",&N,&R,&D);
+    scanf_s("%d %d %d",&N,&R,&D);
     long x[1000],y[1000];
     for(int i=0 ; i<N ;i++)
     {
-        scanf("%d %d",&x[i],&y[i]);
+        scanf_s("%d %d",&x[i],&y[i]);
     }
     char ans;
     for(int i=0 ; i<N ; i++)
